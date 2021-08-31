@@ -4,9 +4,12 @@ node {
     def buildInfo = Artifactory.newBuildInfo()
     stage 'Build'
         git url: 'https://github.com/sammyboyzzz001/my-orange-gsgradle.git'
-
-    stage 'Artifactory configuration'
-        rtGradle.tool = 'my_gradle' // Tool name from Jenkins configuration > Global Tool Configuration > Gradle
+        stage 'Artifactory configuration'
+    
+        // Tool name from Jenkins configuration > Global Tool Configuration > Gradle
+        rtGradle.tool = 'my_gradle'
+    
+        // As per defined under my-orange-gsgradle/artifactory/build.gradle
         rtGradle.deployer repo:'gradle-gradle-dev-local',  server: server
         rtGradle.resolver repo:'gradle-gradle-dev', server: server
 
