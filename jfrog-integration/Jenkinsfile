@@ -3,7 +3,7 @@ node {
     def rtGradle = Artifactory.newGradleBuild()
     def buildInfo = Artifactory.newBuildInfo()
     stage 'Build'
-        git url: 'https://github.com/sammyboyzzz001/my-orange-gsgradle.git'
+        git url: 'https://github.com/sammyboyzzz001/my-orange-gsgradle'
         stage 'Artifactory configuration'
     
         // Tool name from Jenkins configuration > Global Tool Configuration > Gradle
